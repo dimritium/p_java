@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TemplCheck",
+            "request": "launch",
+            "mainClass": "TemplCheck",
+            "projectName": "java_27f5ae3d"
+        }
+    ]
+}
