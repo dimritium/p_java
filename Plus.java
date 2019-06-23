@@ -1,12 +1,6 @@
 import java.util.*;
 
 public class Plus {
-    public static boolean valid_pos(int i, int j, int h, int m) {
-        if((i > 0 || j > 0) && (i < h || j < m)) {
-            return true;
-        }
-        return false;
-    }
 
     public static boolean isplus(char arr[][], int i, int j, int h, int w) {
         int lf = 1, rf = 1, df = 1, uf = 1;
