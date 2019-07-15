@@ -1,2 +1,1 @@
-m <= val || ((val - 1)*2 >= m && (val-1)*2 <= 2*m - m/2)) {
-            // }
+System.out.println(len1 + " " + len2);

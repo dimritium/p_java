@@ -5,15 +5,17 @@ public class B280 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), l = sc.nextInt();
-        // int arr[] = new int[n];
         BigDecimal arr[] = new BigDecimal[n];
-        BigDecimal a = BigDecimal.ZERO;
         for(int i = 0; i < n; i++) {
             arr[i] = sc.nextBigDecimal();
         }
+        sc.close();
+        
         Arrays.sort(arr);
+        
         BigDecimal init = arr[0].multiply(new BigDecimal("-1"));
         BigDecimal res = new BigDecimal("0");
+        
         for(int i = 0; i < n; i++) {
             if(arr[i].subtract(init).divide(new BigDecimal(2)).compareTo(res) == 1) {
                 res = arr[i].subtract(init).divide(new BigDecimal(2));
