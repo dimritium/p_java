@@ -19,6 +19,7 @@ public class C1185 {
         for(int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        sc.close();
         long csum = 0;
         for(int i = 0; i < n; i++) {
             csum += arr[i];
