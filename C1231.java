@@ -4,29 +4,8 @@ import java.util.stream.*;
 public class C1231 {
 
     static long findNum(int row, int col, int arr[][]) {
-        if(arr[row + 1][col] != 0 && arr[row][col + 1] != 0) {
             arr[row][col] = (int)Math.min(arr[row + 1][col] - 1, arr[row][col + 1] - 1);
             return  arr[row][col];
-        }
-
-        else {
-            if(arr[row + 1][col] == 0 && arr[row][col + 1] != 0) {
-                int x = (int)Math.min(arr[row][col + 1] - 1, findNum(row + 1, col, arr) - 1);
-                arr[row][col] = x;
-                return x;
-            }
-            else if(arr[row + 1][col] != 0 && arr[row][col + 1] == 0) {
-                int x = (int)Math.min(findNum(row, col + 1, arr), arr[row][col + 1] - 1);
-                arr[row][col] = x;
-                return x;
-            
-            } else {
-                int x = (int)(findNum(row + 1, col, arr));
-                int y = (int)findNum(row, col + 1, arr);
-                arr[row][col] = (int)Math.min(x -1, y-1);
-                return arr[row][col];
-            }
-        }
     }
 
     static boolean validate(int arr[][], int row, int col) {
@@ -59,17 +38,19 @@ public class C1231 {
                 arr[i][j] = sc.nextInt();
             }
         }
-
+        sc.close();
+        
         long sum = 0;
         for(int i = row - 1; i > -1; i--) {
             for(int j = col - 1; j > -1; j--) {
-                if(arr[i][j] != 0)
+                if(arr[i][j] == 0)  {
                     sum += arr[i][j];
+                }
                 else {
                     long x = findNum(i, j, arr);
-                    // System.out.println(x);
                     sum += x;
                 }
+
             }
         }
 
